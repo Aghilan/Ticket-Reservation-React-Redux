@@ -1,7 +1,7 @@
 import { ADD_USER, ADD_USER_SUCCESS, LOG_OUT,
         AUTH_USER, AUTH_USER_SUCCESS } from '../constants';
 
-import CreateApiCall from '../utils/add-request';
+import CreateApiCall from '../utils/post-request';
 
 export default function(state = [], action) {
   switch (action.type) {

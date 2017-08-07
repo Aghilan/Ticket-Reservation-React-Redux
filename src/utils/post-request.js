@@ -1,5 +1,6 @@
 import { addUserSuccess, authUserSuccess } from '../actions/user';
 import { getTheaterSeats } from '../actions/seats'
+import { bookTicketsSuccess } from '../actions/reservation'
 import store from '../store'
 
 const CreateApiCall = {
@@ -41,7 +42,28 @@ const CreateApiCall = {
      }
    })
    .catch(error => { console.log('request failed', error); });
-  }
+  },
+
+  bookTickets(seats,userId) {
+   fetch('http://localhost:3000/users/'+userId+'/reservation', request(JSON.stringify(seats)))
+   .then(response => {
+     if (response.status >= 200 && response.status < 300) {
+       response.json().then(data => {
+         if(!data.errors){
+           store.dispatch(getTheaterSeats());
+           store.dispatch(bookTicketsSuccess(data));
+        }
+       });
+     } else {
+       alert('Sorry for inconvenience! Not able to book tickets. Please try again')
+       const error = new Error(response.statusText);
+       error.response = response;
+       throw error;
+     }
+   })
+   .catch(error => { console.log('request failed', error); });
+  },
+
 
 };
 

@@ -5,4 +5,6 @@ export const ADD_USER = 'add_user',
              LOG_OUT = 'log_out',
              GET_SEATS = 'get_seats',
              GET_SEATS_SUCCESS = 'get_seat_success',
-             SELECT_SEAT = 'select_seats'
+             SELECT_SEAT = 'select_seats',
+             BOOK_TICKETS = 'book_tickets',
+             BOOK_TICKETS_SUCCESS = 'book_tickets_success'
