@@ -26,6 +26,7 @@ class Reservation extends Component {
 
   profile() {
     this.props.useraction.displayProfile();
+    this.props.seatsAction.clearSelection();
     this.props.useraction.listAllReservation(this.props.user.username);
   }
 

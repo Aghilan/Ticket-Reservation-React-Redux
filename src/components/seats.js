@@ -16,6 +16,7 @@ class Seats extends Component {
       <div className="plane">
         <div className="cockpit">
           <h1>Please select your seats</h1>
+          <h5> Screen this way </h5>
         </div>
         <div className="exit exit--front fuselage"></div>
         <ol className="cabin fuselage">
@@ -31,7 +32,7 @@ class Seats extends Component {
         <div className="exit exit--back fuselage"></div>
       </div>
     ):
-    (<div> Please load Data to the DB </div>)
+    (<div> Please load Data to the DB by importing the json file</div>)
   }
 }
 
