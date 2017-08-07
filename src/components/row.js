@@ -5,7 +5,6 @@ class Row extends Component {
 
   render() {
     var { row } = this.props
-    console.log("0There")
     return (
       <li className="row">
         <ol className="seats" >

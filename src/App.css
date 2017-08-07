@@ -279,3 +279,25 @@ ol {
   -webkit-animation-name: rubberBand;
   animation-name: rubberBand;
 }
+
+.table-filter {
+	background-color: #fff;
+	border-bottom: 1px solid #eee;
+}
+.table-filter tbody tr:hover {
+	cursor: pointer;
+	background-color: #607D8B;
+}
+.table-filter .media-body {
+    display: block;
+}
+.table-filter .delete {
+  color: black
+}
+.table-filter .media .title {
+	color: #2BBCDE;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: normal;
+	margin: 0;
+}

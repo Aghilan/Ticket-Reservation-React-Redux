@@ -1,5 +1,5 @@
 import { addUserSuccess, authUserSuccess } from '../actions/user';
-import { getTheaterSeats } from '../actions/seats'
+import { getTheaterSeats, clearSelection } from '../actions/seats'
 import { bookTicketsSuccess } from '../actions/reservation'
 import store from '../store'
 
@@ -51,6 +51,7 @@ const CreateApiCall = {
        response.json().then(data => {
          if(!data.errors){
            store.dispatch(getTheaterSeats());
+           store.dispatch(clearSelection());
            store.dispatch(bookTicketsSuccess(data));
         }
        });

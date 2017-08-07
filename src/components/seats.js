@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Seat from './seat'
 import Row from './row'
 import { connect } from 'react-redux';
 
@@ -13,7 +12,6 @@ class Seats extends Component {
     this.props.action.getTheaterSeats();
   }
   render(){
-  console.log(this.props.seats)
     return this.props.seats.length? (
       <div className="plane">
         <div className="cockpit">
@@ -23,7 +21,6 @@ class Seats extends Component {
         <ol className="cabin fuselage">
           {
             this.props.seats.map(function(row,i){
-              console.log(row)
               return( <Row
                         key={i}
                         row={row}
