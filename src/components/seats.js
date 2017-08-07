@@ -32,7 +32,7 @@ class Seats extends Component {
         <div className="exit exit--back fuselage"></div>
       </div>
     ):
-    (<div> Please load Data to the DB by importing the json file</div>)
+    (<div> Please load Data to the DB by importing the json file as <a href="https://github.com/Aghilan/ReservationApp/blob/master/README.md">referred </a></div>)
   }
 }
 
