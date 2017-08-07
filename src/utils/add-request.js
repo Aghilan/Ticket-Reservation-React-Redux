@@ -1,4 +1,5 @@
 import { addUserSuccess, authUserSuccess } from '../actions/user';
+import { getTheaterSeats } from '../actions/seats'
 import store from '../store'
 
 const CreateApiCall = {
@@ -28,6 +29,7 @@ const CreateApiCall = {
      if (response.status >= 200 && response.status < 300) {
        response.json().then(data => {
          if(!data.errors){
+           store.dispatch(getTheaterSeats());
            store.dispatch(authUserSuccess(data));
         }
        });

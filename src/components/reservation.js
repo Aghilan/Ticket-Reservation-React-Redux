@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as user from '../actions/user'
 import UserForm from './userform'
-import Seat from './seats'
+import Seats from './seats'
 
 class Reservation extends Component {
   constructor(props) {
@@ -38,6 +38,7 @@ class Reservation extends Component {
   }
 
   render() {
+    console.log(this.props.selected_seats)
     return (
       <div>
         <div hidden={this.props.user._id}>
@@ -45,8 +46,18 @@ class Reservation extends Component {
         </div>
         <div hidden={!this.props.user._id}>
           {this.renderTopNavgation()}
-          <Seat />
+          <Seats />
+          <div className="selected">
+            Selected Seats:
+            { this.props.selected_seats.map(function(seat,i){
+                 return (<a href="javascript:void(0);" key={i}> {seat} </a>)
+               })
+            }
+            <br /> <br />
+            <button> Book Tickets </button>
+          </div>
         </div>
+
       </div>
     );
   }
@@ -57,7 +68,7 @@ Redux Containers - To map the components to store
 */
 
 function mapStateToProps(state){
-  return {user: state.user};
+  return {user: state.user, selected_seats: state.selected_seats};
 }
 
 function mapDispatchToProps(dispatch){

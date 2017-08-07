@@ -13,6 +13,8 @@ export default function(state = [], action) {
     case AUTH_USER:
       CreateApiCall.authUser(action.payload);
       return state;
+    case ADD_USER_SUCCESS:
+      return action.payload;
     case AUTH_USER_SUCCESS:
       return action.payload;
     default:
